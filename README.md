@@ -1,6 +1,5 @@
 # Online Code Editor
 A full stack web application for online programming, built with React(Frontend) and Express(Backend).
-<kbd>![image](/public/codeeditor.png)</kbd>
 
 # Function
 This application is used for online coding. After selecting the programming language, you can start to write code. Below are the highlighted features.
