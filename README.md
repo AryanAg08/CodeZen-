@@ -35,4 +35,4 @@ Create container.
 docker run --name code-editor-web -p 9010:80 -d AryanAg/code-editor-web
 docker run --name code-editor-server -p 9011:80 -d AryanAg/code-editor-server
 ```
-Access http://192.168.0.2:9010/ in browser.
+Access http://localhost:9010/ in browser.
