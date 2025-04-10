@@ -29,8 +29,4 @@ app.use((req, res, next) => {
 
   app.use("/api", require("./routes/api.routes"));
 
-//   app.get('/api', (req, res) => {
-//     res.json({ message: 'Hello! welcome to our api!' });
-//   });
-
 app.listen(PORT, () => console.log(`Listening on port ${PORT}!`));

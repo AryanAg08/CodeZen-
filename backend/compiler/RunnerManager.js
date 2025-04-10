@@ -38,13 +38,30 @@ module.exports = {
     const extension = path.parse(file).ext; // .java
     console.log(`filename: ${filename}`);
     console.log(`extension: ${extension}`);
+    const getGeminiSuggestion = require('../utils/gemini');
 
     FileApi.saveFile(file, code, () => {
-      runner.run(file, directory, filename, extension, (status, message) => {
+      runner.run(file, directory, filename, extension, async (status, message) => {
+        let suggestion = '';
+    
+        if (status === '0') {
+          // Code ran successfully — give suggestion or enhancement tips
+          suggestion = await getGeminiSuggestion(
+            `Can you provide suggestions or improvements for this ${lang} code?\n\n${code}`
+          );
+        } else {
+          // Code has error — ask Gemini to help fix it
+          suggestion = await getGeminiSuggestion(
+            `This ${lang} code is throwing an error:\n\n${message}\n\nCan you help fix it or suggest what's wrong?\n\nCode:\n${code}`
+          );
+        }
+    
         const result = {
           status,
           message,
+          suggestion,
         };
+    
         res.end(JSON.stringify(result));
       });
     });
