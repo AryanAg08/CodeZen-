@@ -1,6 +1,0 @@
-.vscode
-node_modules
-dist
-*.log
-*.class
-src/server/compiler/temp/

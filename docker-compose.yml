@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: DockerFile
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./backend:/app
+      - /app/node_modules  # Prevents overwriting node_modules with host's empty folder
+    environment:
+      - NODE_ENV=development

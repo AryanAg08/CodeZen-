@@ -1,0 +1,16 @@
+FROM node:18
+
+
+WORKDIR /app
+
+COPY package*.json ./
+RUN npm install
+
+# Copy rest of the backend code
+COPY . .
+
+# Expose port (adjust if needed)
+EXPOSE 8080
+
+# Start the server
+CMD ["npm", "run", "dev"]
