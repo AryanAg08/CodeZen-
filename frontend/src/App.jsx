@@ -1,6 +1,10 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import HomeScreen from "./screens/HomeScreen/HomeScreen";
 import CodeScreen from "./screens/CodeScreen/CodeScreen";
+import LandingPage from "./components/LandingPage"; // New Landing page
+import Login from "./components/Login"; // Login page
+import SignUp from "./components/SignUp"; // SignUp page
+import PrivateRoute from "./components/PrivateRoute"; // Protects routes
 import CodesProvider from "./providers/CodesProvider";
 import ModalProvider from "./providers/ModalProvider";
 
@@ -12,8 +16,27 @@ function App() {
       <ModalProvider>
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<HomeScreen />} />
-            <Route path="/code/:folderId/:fileId" element={<CodeScreen />} />
+    
+            <Route path="/" element={<LandingPage />} /> {/* Landing page */}
+            <Route path="/login" element={<Login />} /> {/* Login page */}
+            <Route path="/signup" element={<SignUp />} /> {/* Sign Up page */}
+    
+            <Route
+              path="/dashboard"
+              element={
+                <PrivateRoute>
+                  <HomeScreen />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="/code/:folderId/:fileId"
+              element={
+                <PrivateRoute>
+                  <CodeScreen />
+                </PrivateRoute>
+              }
+            />
           </Routes>
         </BrowserRouter>
       </ModalProvider>
