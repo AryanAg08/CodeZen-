@@ -26,7 +26,6 @@ async function getSubmission(tokenId, callback) {
 }
 
 export async function makeSubmission({ code, language, callback, stdinput }) {
-  //` Makes an submission and handles the status code of the submission
   const url = "https://judge0-ce.p.rapidapi.com/submissions?fields=*";
 
   const httpOptions = {
