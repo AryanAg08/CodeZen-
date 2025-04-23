@@ -1,7 +1,13 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const mongoose = require("mongoose");
+const dotenv = require("dotenv");
+const authRoutes = require("./routes/auth.routes");
+
+dotenv.config();
 
 const PORT = process.env.PORT || 8080;
+const MONGO_URI = process.env.MONGO_URI || "mongodb://localhost:27017/code_runner";
 
 const app = express();
 
@@ -28,5 +34,13 @@ app.use((req, res, next) => {
   });
 
   app.use("/api", require("./routes/api.routes"));
+  app.use("/api/auth", authRoutes);
 
-app.listen(PORT, () => console.log(`Listening on port ${PORT}!`));
+mongoose.connect(MONGO_URI)
+.then(() => {
+  console.log("Connected to MongoDB");
+  app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+})
+.catch((err) => {
+  console.error("MongoDB connection error:", err);
+});

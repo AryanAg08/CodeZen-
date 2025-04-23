@@ -1,14 +1,14 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import HomeScreen from "./screens/HomeScreen/HomeScreen";
 import CodeScreen from "./screens/CodeScreen/CodeScreen";
-import LandingPage from "./components/LandingPage"; // New Landing page
-import Login from "./components/Login"; // Login page
-import SignUp from "./components/SignUp"; // SignUp page
-import PrivateRoute from "./components/PrivateRoute"; // Protects routes
+import LandingPage from "./components/LandingPage"; 
+import LoginSignup from "./components/LoginSignup"; 
+import PrivateRoute from "./components/PrivateRoute"; 
 import CodesProvider from "./providers/CodesProvider";
 import ModalProvider from "./providers/ModalProvider";
 
 import "./App.css";
+
 
 function App() {
   return (
@@ -18,8 +18,8 @@ function App() {
           <Routes>
     
             <Route path="/" element={<LandingPage />} /> {/* Landing page */}
-            <Route path="/Login" element={<Login />} /> {/* Login page */}
-            <Route path="/signup" element={<SignUp />} /> {/* SignUp page */}
+            <Route path="/Login" element={<LoginSignup />} /> {/* Login page */}
+            <Route path="/signup" element={<LoginSignup />} /> {/* SignUp page */}
     
             <Route
               path="/dashboard"

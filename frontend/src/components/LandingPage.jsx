@@ -68,25 +68,10 @@ function LandingPage() {
             cursor: "pointer",
             fontWeight: "bold",
             fontSize: "1rem",
-            marginRight: "1rem",
-          }}
-        >
-          Login
-        </button>
-        <button
-          onClick={() => navigate("/signup")}
-          style={{
-            background: "linear-gradient(to right, #82d6ff, #e584fc)",
-            border: "none",
-            borderRadius: "4px",
-            padding: "8px 16px",
-            cursor: "pointer",
-            fontWeight: "bold",
-            fontSize: "1rem",
             marginRight: "4rem",
           }}
         >
-          Sign Up
+          Login
         </button>
       </nav>
 
