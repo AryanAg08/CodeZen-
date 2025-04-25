@@ -23,6 +23,7 @@ function LoginSignup() {
     e.preventDefault();
     try {
       let response;
+      resetForm(); 
       if (isLogin) {
         // Login
         response = await axios.post("http://localhost:8080/api/auth/login", {
