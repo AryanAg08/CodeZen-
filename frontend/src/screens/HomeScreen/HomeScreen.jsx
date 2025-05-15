@@ -116,7 +116,7 @@ function HomeScreen() {
       <div className="left-container">
         <div className="left-items-container">
           <img src="logo.png" alt="logo" className="left-logo" />
-          <h1>CodeLabs</h1>
+          <h1>CodeZen</h1>
           <h2>Code. Compile. Execute.</h2>
           <button onClick={openCreateCodeModal}>
             <AddIcon sx={{ stroke: "black", strokeWidth: 1 }} />

@@ -77,7 +77,7 @@ function CodeScreen() {
   <div className="content-container">
     <div className="header-container">
       <img src="/logo.png" alt="" className="code-header-logo" />
-      <h1>CodeLabs</h1>
+      <h1>CodeZen</h1>
     </div>
 
     <div className="code-container ai-layout">
