@@ -24,17 +24,17 @@ function App() {
             <Route
               path="/dashboard"
               element={
-                <PrivateRoute>
+                // <PrivateRoute>
                   <HomeScreen />
-                </PrivateRoute>
+                // </PrivateRoute>
               }
             />
             <Route
               path="/code/:folderId/:fileId"
               element={
-                <PrivateRoute>
+                // <PrivateRoute>
                   <CodeScreen />
-                </PrivateRoute>
+                // </PrivateRoute>
               }
             />
           </Routes>
