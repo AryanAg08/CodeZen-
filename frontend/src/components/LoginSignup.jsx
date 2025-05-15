@@ -26,11 +26,11 @@ function LoginSignup() {
       resetForm(); 
       if (isLogin) {
         // Login
-        response = await axios.post("http://localhost:8080/api/auth/login", {
-          email,
-          password,
-        });
-        console.log("Login Success:", response.data);
+        // response = await axios.post("http://localhost:8080/api/auth/login", {
+        //   email,
+        //   password,
+        // });
+       // console.log("Login Success:", response.data);
         navigate("/dashboard");
       } else {
         // Signup
